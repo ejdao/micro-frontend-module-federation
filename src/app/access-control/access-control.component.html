@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row no-padding">
+    <div class="d-none d-md-block col-md-42-5 col-lg-47-5 col-xl-60 col-xxl-65">
+      <div class="app__access-control__container">
+        <div class="app__access-control__description__container">
+          <h1 class="app__access-control__description__title">{{ app.name }}</h1>
+          <h4 class="app__access-control__description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in libero ipsa,
+            tempore deserunt suscipit. Optio illo natus nesciunt ex a hic accusamus modi totam rem
+            saepe nam, veritatis beatae?
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-100 col-md-57-5 col-lg-52-5 col-xl-40 col-xxl-35">
+      <div class="app__access-control__outlet__container">
+        <div class="app__access-control__outlet">
+          <router-outlet></router-outlet>
+          <div class="app__access-control__outlet__footer">
+            {{ app.name }} v{{ app.version }} ({{ app.released }}) {{ app.company }}
+            <br />
+            Copyright © {{ app.year }} - Todos los derechos reservados
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
