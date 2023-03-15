@@ -1,12 +1,11 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { APP_INFO } from '../app.information';
+import { APP_INFO } from '../app.config';
 
 @Component({
   selector: 'app-access-control',
   templateUrl: './access-control.component.html',
   styleUrls: ['./access-control.component.scss'],
-  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccessControlComponent {

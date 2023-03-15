@@ -10,13 +10,19 @@ import { SIDE_NAV } from './admin-layout.navigation';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminLayoutComponent implements OnInit {
-  private _includeBreadcrumbs = true;
+  private _includeBreadcrumbs = false;
   private _authorities!: any[];
   private _context: any;
   private _sidenav = SIDE_NAV;
   private _isLoaded = LAYOUT_RESOURCES_LOADED;
 
   public ngOnInit(): void {
+    document.getElementsByTagName('body')[0].classList.toggle('gcm-layout');
+
+    if (localStorage.getItem('dark-theme')) {
+      document.getElementsByTagName('body')[0].classList.toggle('dark-theme');
+    }
+
     this._isLoaded.setValue(true);
   }
 

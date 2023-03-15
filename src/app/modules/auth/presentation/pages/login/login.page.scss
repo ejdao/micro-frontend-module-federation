@@ -1,0 +1,17 @@
+.ekl-auth__login-form {
+  text-align: center;
+  padding: 20px;
+  & > button {
+    font-weight: bolder;
+  }
+}
+.v1-link {
+  font-size: 12px;
+}
+::ng-deep {
+  .ekl-auth__field.mat-form-container {
+    > mat-form-field > .mat-form-field-wrapper {
+      margin: 0;
+    }
+  }
+}

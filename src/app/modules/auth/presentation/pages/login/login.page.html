@@ -1,0 +1,18 @@
+<form [formGroup]="loginForm" class="ekl-auth__login-form" (ngSubmit)="clickOnAuthenticate()">
+  <gcm-text-field class="ekl-auth__field" appearance="outline" [formControl]="loginForm.email">
+    Nombre del Usuario
+  </gcm-text-field>
+
+  <gcm-password-field
+    class="ekl-auth__field"
+    appearance="outline"
+    [formControl]="loginForm.password"
+  >
+    Contraseña
+  </gcm-password-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="isAuthenticating">
+    INICIAR SESIÓN
+  </button>
+  <br />
+</form>

@@ -7,7 +7,13 @@ const routes: Routes = [
   {
     path: '',
     component: AdminLayoutComponent,
-    children: [],
+    children: [
+      {
+        path: 'home',
+        loadChildren: () => import('./modules/home/home.module').then(m => m.HomePageModule),
+        data: { title: 'Home', breadcrumb: 'Home' },
+      },
+    ],
   },
   {
     path: '',

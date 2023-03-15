@@ -1,0 +1,32 @@
+.app {
+  &__header {
+    &__container {
+      color: var(--jar-header-logo-color);
+      height: var(--header-height);
+      align-items: center;
+      margin-right: 10px;
+      margin-top: -20px;
+      position: fixed;
+      right: 0;
+    }
+    &__user-full-name {
+      font-weight: 600;
+      font-family: 'titlecommerce';
+      margin-right: 10px;
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+  }
+}
+
+/*
+.jar-header .toggle-sidebar-btn,
+.jar-header__logo span {
+  color: var(--dark-background-color-700);
+}
+
+:root {
+  --jar-header-background-color: var(--primary-500);
+}
+*/

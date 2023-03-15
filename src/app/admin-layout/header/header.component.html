@@ -1,0 +1,19 @@
+<div class="app__header__container">
+  <div></div>
+  <div class="app__theme-btn__container">
+    <span class="app__header__user-full-name">{{ userFullName }}</span>
+    <span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item (click)="onLogout()">
+          <mat-icon>logout</mat-icon>
+          <span>Cerrar Sesión</span>
+        </a>
+      </mat-menu>
+    </span>
+
+    <button mat-icon-button (click)="toggleTheme()"><mat-icon>dark_mode</mat-icon></button>
+  </div>
+</div>
