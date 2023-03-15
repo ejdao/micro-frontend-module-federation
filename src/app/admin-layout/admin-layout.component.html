@@ -1,0 +1,13 @@
+<jar-layout
+  appTitle="Micro Frontend With MF"
+  appIcon="favicon.ico"
+  initialPage="home"
+  [includeBreadcrumbs]="includeBreadcrumbs"
+  [authorities]="authorities"
+  [context]="context"
+  [sidenav]="sidenav"
+>
+  <div jar-custom-header><!-- Aquí irá el header --></div>
+  <div jar-custom-footer><!-- Aquí irá el footer --></div>
+  <router-outlet></router-outlet>
+</jar-layout>
