@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccessControlComponent } from './access-control/access-control.component';
 import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
+import { AuthGuard, GuestGuard } from './guards';
 
 const routes: Routes = [
   {
     path: '',
+    canActivate: [AuthGuard],
     component: AdminLayoutComponent,
     children: [
       {
@@ -17,6 +19,7 @@ const routes: Routes = [
   },
   {
     path: '',
+    canActivate: [GuestGuard],
     component: AccessControlComponent,
     children: [
       {

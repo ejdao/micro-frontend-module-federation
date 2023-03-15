@@ -14,7 +14,7 @@ export class AccessControlComponent {
   constructor(private _title: Title) {}
 
   public ngOnInit(): void {
-    this._title.setTitle('MF | Control de acceso');
+    this._title.setTitle('Module Federation | Control de acceso');
     document.getElementById('body')?.classList.add('access-control');
   }
 
