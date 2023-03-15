@@ -4,13 +4,13 @@ const path = require('path');
 const share = mf.share;
 
 const sharedMappings = new mf.SharedMappings();
-sharedMappings.register(path.join(__dirname, 'tsconfig.json'), [
+sharedMappings.register(path.join(__dirname, '../../tsconfig.json'), [
   /* mapped paths to share */
 ]);
 
 module.exports = {
   output: {
-    uniqueName: 'app',
+    uniqueName: 'seguridad',
     publicPath: 'auto',
   },
   optimization: {
@@ -28,8 +28,10 @@ module.exports = {
     new ModuleFederationPlugin({
       library: { type: 'module' },
 
-      remotes: {
-        seguridad: 'http://localhost:4001/seguridad.js',
+      name: 'seguridad',
+      filename: 'seguridad.js',
+      exposes: {
+        './SeguridadModule': './modules/seguridad/src/seguridad.module.ts',
       },
 
       shared: share({

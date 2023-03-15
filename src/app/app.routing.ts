@@ -15,6 +15,11 @@ const routes: Routes = [
         loadChildren: () => import('./modules/home/home.module').then(m => m.HomePageModule),
         data: { title: 'Home', breadcrumb: 'Home' },
       },
+      {
+        path: 'seguridad',
+        loadChildren: () => import('seguridad/SeguridadModule').then(m => m.SeguridadModule),
+        data: { title: 'Seguridad', breadcrumb: 'Seguridad' },
+      },
     ],
   },
   {
