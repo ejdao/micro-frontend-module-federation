@@ -29,7 +29,8 @@ export const SIDE_NAV: JarLaySnavItems[] = [
       },
       {
         name: 'Form Layouts',
-        url: 'form-layouts',
+        url: 'home',
+        urlIsNotAutoCompleted: true,
         authorities: [Authorities.LAYOUTS],
         disableOnContexts: ['MEDELLIN'],
       },

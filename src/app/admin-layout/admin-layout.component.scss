@@ -1,0 +1,57 @@
+// ------------------------------------------------
+// Ajustes para @jasr-devs/ng-layout
+// ------------------------------------------------
+:root {
+  --jar-header-background-color: var(--primary-500);
+  --jar-header-default-content-background-color: white;
+  --jar-breadcrumb-color: var(--primary-opacity-700);
+  --jar-breadcrumb-title-color: var(--primary-500);
+  --jar-breadcrumb-active-color: var(--primary-500);
+  --jar-header-logo-color: var(--primary-500);
+
+  .jar-sidebar-nav .nav-link i,
+  .jar-sidebar-nav .nav-link {
+    color: black;
+  }
+
+  .jar-sidebar-nav .nav-content a {
+    color: black;
+  }
+  .jar-snav__active-link > span {
+    color: black !important;
+  }
+  .jar-header {
+    &__logo span {
+      color: var(--dark-color-700);
+    }
+    & .toggle-sidebar-btn {
+      color: var(--dark-color-700);
+    }
+  }
+}
+
+.dark-theme {
+  --jar-header-default-content-background-color: var(--jar-header-background-color);
+  .jar-snav__active-link > span,
+  .jar-sidebar-nav .nav-link i,
+  .jar-sidebar-nav .nav-link {
+    color: white;
+  }
+  .jar-header {
+    &__logo span {
+      color: white;
+    }
+    & .toggle-sidebar-btn {
+      color: white;
+    }
+  }
+  .jar-sidebar-nav .nav-content a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+  .jar-snav__active-link > span {
+    color: white !important;
+  }
+}

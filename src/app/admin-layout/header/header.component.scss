@@ -1,7 +1,6 @@
 .app {
   &__header {
     &__container {
-      color: var(--jar-header-logo-color);
       height: var(--header-height);
       align-items: center;
       margin-right: 10px;
@@ -19,14 +18,3 @@
     }
   }
 }
-
-/*
-.jar-header .toggle-sidebar-btn,
-.jar-header__logo span {
-  color: var(--dark-background-color-700);
-}
-
-:root {
-  --jar-header-background-color: var(--primary-500);
-}
-*/
