@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "@eklipse/components": "^10.0.0",
+    "@eklipse/utilities": "^5.0.1",
     "@jasr-devs/ng-layout": "^1.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
