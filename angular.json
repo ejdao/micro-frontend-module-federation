@@ -27,7 +27,11 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss", "node_modules/@jasr-devs/ng-layout/assets/main.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/@jasr-devs/ng-layout/assets/main.scss",
+              "node_modules/@eklipse/components/assets/main.scss"
+            ],
             "scripts": [],
             "extraWebpackConfig": "webpack.config.js",
             "commonChunk": false
