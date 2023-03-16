@@ -11,3 +11,5 @@ Usar `ng add @angular-architects/module-federation --project nameproject --port 
 ## El patrón redux con NgRx en angular
 
 Sigue este [link](https://academia-binaria.com/el-patron-redux-con-ngrx-en-angular/) para ver la información con la cual se implementó NgRx en este proyecto.
+
+`ng g @ngrx/schematics:feature stores/user-authenticated --project=app --module=app.module.ts --no-flat --skip-tests=true` Ejemplo de como generar stores mediante @ngrx/schematics

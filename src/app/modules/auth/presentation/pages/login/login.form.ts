@@ -1,5 +1,5 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginPayload } from '@app/auth/application/data-transfers';
+import { LoginPayload } from '@app/modules/auth/application/data-transfers';
 
 export class LoginForm extends FormGroup {
   constructor() {
