@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { UserAuthenticatedStore } from '@app/stores';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'seg-registrar-usuarios',
@@ -8,7 +10,17 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrarUsuariosPage implements OnInit {
+  private _obs!: Subscription;
+
+  constructor(private userAuthenticated: UserAuthenticatedStore) {}
+
   public ngOnInit(): void {
-    console.log(localStorage.getItem('jar-tok-auth'));
+    this._obs = this.userAuthenticated.observable().subscribe(_ => {
+      console.log(_);
+    });
+  }
+
+  public ngOnDestroy(): void {
+    this._obs.unsubscribe();
   }
 }
