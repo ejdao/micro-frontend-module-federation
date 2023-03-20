@@ -3,26 +3,32 @@
 // ------------------------------------------------
 :root {
   --jar-header-background-color: var(--primary-500);
-  --jar-header-default-content-background-color: white;
+  --jar-header-default-content-background-color: var(--primary-500);
   --jar-breadcrumb-color: var(--primary-opacity-700);
   --jar-breadcrumb-title-color: var(--primary-500);
   --jar-breadcrumb-active-color: var(--primary-500);
   --jar-header-logo-color: var(--primary-500);
-
-  .jar-sidebar-nav .nav-link i,
-  .jar-sidebar-nav .nav-link {
-    color: black;
+  --jar-sidebar-recurrent-color-1: var(--primary-500);
+  --jar-sidebar-recurrent-color-2: black;
+  .jar-header__default-content {
+    margin: -21px 0px -20px -20px;
+    background-color: white;
+    padding: 10px;
+    height: 60px;
   }
-
-  .jar-sidebar-nav .nav-content a {
-    color: black;
-  }
-  .jar-snav__active-link > span {
-    color: black !important;
+  .jar-header .toggle-sidebar-btn {
+    background-color: var(--primary-500);
+    height: 60px;
+    padding-top: 6px;
+    padding-right: 20px;
+    margin-left: 10px;
+    margin-right: -10px;
+    color: var(--dark-color-700);
   }
   .jar-header {
     &__logo span {
-      color: var(--dark-color-700);
+      color: var(--primary-500);
+      font-size: 18px;
     }
     & .toggle-sidebar-btn {
       color: var(--dark-color-700);
@@ -36,6 +42,12 @@
   .jar-sidebar-nav .nav-link i,
   .jar-sidebar-nav .nav-link {
     color: white;
+  }
+  .jar-header__default-content {
+    background-color: var(--jar-header-background-color);
+  }
+  .jar-header .toggle-sidebar-btn {
+    background-color: var(--jar-header-background-color);
   }
   .jar-header {
     &__logo span {
