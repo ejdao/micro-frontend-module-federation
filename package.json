@@ -10,7 +10,7 @@
     "build-stats": "ng build --stats-json",
     "stats": "npx webpack-bundle-analyzer dist/app/stats.json",
     "dist": "http-server dist/app",
-    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+    "all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
   "dependencies": {

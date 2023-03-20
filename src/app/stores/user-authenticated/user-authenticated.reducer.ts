@@ -1,16 +1,19 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as UserAuthenticatedActions from './user-authenticated.actions';
+import { UserAuthenticatedModel } from './user-authenticated.model';
 
 export const userAuthenticatedFeatureKey = 'userAuthenticated';
 
-export interface State {}
+export const initialState: UserAuthenticatedModel = {
+  token: '',
+  name: '',
+  authorities: [],
+};
 
-export const initialState: State = {};
-
-export const reducer = createReducer(
+export const userAuthenticatedReducer = createReducer(
   initialState,
 
-  on(UserAuthenticatedActions.userAuthenticatedUserAuthenticateds, state => state),
-  on(UserAuthenticatedActions.userAuthenticatedUserAuthenticatedsSuccess, (state, action) => state),
-  on(UserAuthenticatedActions.userAuthenticatedUserAuthenticatedsFailure, (state, action) => state)
+  on(UserAuthenticatedActions.setUserAuthenticated, (state, { data }) => {
+    return { ...data };
+  })
 );

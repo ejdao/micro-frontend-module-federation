@@ -1,15 +1,7 @@
 import { createAction, props } from '@ngrx/store';
+import { UserAuthenticatedModel } from './user-authenticated.model';
 
-export const userAuthenticatedUserAuthenticateds = createAction(
-  '[UserAuthenticated] UserAuthenticated UserAuthenticateds'
-);
-
-export const userAuthenticatedUserAuthenticatedsSuccess = createAction(
-  '[UserAuthenticated] UserAuthenticated UserAuthenticateds Success',
-  props<{ data: any }>()
-);
-
-export const userAuthenticatedUserAuthenticatedsFailure = createAction(
-  '[UserAuthenticated] UserAuthenticated UserAuthenticateds Failure',
-  props<{ error: any }>()
+export const setUserAuthenticated = createAction(
+  '[UserAuthenticated] Set user authenticated',
+  props<{ data: UserAuthenticatedModel }>()
 );

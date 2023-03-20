@@ -5,16 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule, MatSnackBarModule } from '@eklipse/components/material';
 import { AccessControlModule } from './access-control/access-control.module';
 import { AdminLayoutModule } from './admin-layout/admin-layout.module';
-import { environment } from 'src/environments/environment';
 import { AddTokenInterceptor } from './interceptors';
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 /* NgRx */
-import * as fromUserAuthenticated from './stores/user-authenticated/user-authenticated.reducer';
-import { UserAuthenticatedEffects } from './stores/user-authenticated';
-import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { ROOT_REDUCERS } from './app.state';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,23 +28,8 @@ import { StoreModule } from '@ngrx/store';
     /* Routing */
     AppRouting,
     /* NgRx */
-    StoreRouterConnectingModule.forRoot({ routerState: RouterState.Minimal }),
-    StoreModule.forRoot(
-      {},
-      {
-        metaReducers: !environment.production ? [] : [],
-        runtimeChecks: {
-          strictActionImmutability: true,
-          strictStateImmutability: true,
-        },
-      }
-    ),
-    StoreModule.forFeature(
-      fromUserAuthenticated.userAuthenticatedFeatureKey,
-      fromUserAuthenticated.reducer
-    ),
+    StoreModule.forRoot(ROOT_REDUCERS),
     EffectsModule.forRoot([]),
-    EffectsModule.forFeature([UserAuthenticatedEffects]),
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
