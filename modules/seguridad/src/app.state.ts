@@ -1,5 +1,5 @@
 import { ActionReducerMap } from '@ngrx/store';
-import { UserAuthenticatedModel, userAuthenticatedReducer } from '@seguridad/app/stores';
+import { UserAuthenticatedModel, userAuthenticatedReducer } from '@seguridad/stores';
 
 export interface AppState {
   userAuthenticated: Readonly<UserAuthenticatedModel>;

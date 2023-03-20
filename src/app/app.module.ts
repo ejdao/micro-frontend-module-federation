@@ -11,6 +11,7 @@ import { AppRouting } from './app.routing';
 /* NgRx */
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { UserAuthenticatedImpl, UserAuthenticatedStore } from './stores';
 import { ROOT_REDUCERS } from './app.state';
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ROOT_REDUCERS } from './app.state';
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },
+    { provide: UserAuthenticatedStore, useClass: UserAuthenticatedImpl },
   ],
   bootstrap: [AppComponent],
 })

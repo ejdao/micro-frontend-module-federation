@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserAuthenticatedStore } from '@seguridad/app/stores';
+import { UserAuthenticatedStore } from './stores';
 
 @Component({
-  selector: 'app-root',
+  selector: 'seg-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

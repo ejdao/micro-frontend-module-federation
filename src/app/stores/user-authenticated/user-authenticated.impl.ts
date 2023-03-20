@@ -4,9 +4,10 @@ import { Observable } from 'rxjs';
 import * as actions from './user-authenticated.actions';
 import { userAuthenticatedState } from './user-authenticated.selectors';
 import { UserAuthenticatedModel } from './user-authenticated.model';
+import { UserAuthenticatedStore } from './user-authenticated.store';
 
 @Injectable({ providedIn: 'root' })
-export class UserAuthenticatedStore {
+export class UserAuthenticatedImpl implements UserAuthenticatedStore {
   constructor(private store: Store<UserAuthenticatedModel>) {}
 
   public dispatch(userAuthenticated: UserAuthenticatedModel): void {

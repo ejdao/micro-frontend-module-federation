@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { UserAuthenticatedStore } from '@app/stores';
+import { UserAuthenticatedStore } from '@seguridad/stores';
 import { Subscription } from 'rxjs';
 
 @Component({

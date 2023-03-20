@@ -5,7 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'registrar-usuarios', pathMatch: 'full' },
   {
     path: '',
-    loadChildren: () => import('../seguridad.module').then(m => m.SeguridadModule),
+    loadChildren: () => import('./seguridad.module').then(m => m.SeguridadModule),
     data: { title: 'Seguridad', breadcrumb: 'Seguridad' },
   },
 ];
