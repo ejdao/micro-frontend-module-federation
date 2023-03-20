@@ -20,8 +20,7 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@app/environments/*": ["src/environments/*"],
+      "@app/*": ["src/*"],
       "@seguridad/*": ["modules/seguridad/src/*"]
     }
   },

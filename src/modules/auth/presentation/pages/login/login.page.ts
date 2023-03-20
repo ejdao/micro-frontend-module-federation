@@ -6,8 +6,8 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { GcmToastService } from '@eklipse/components/toast';
-import { STORAGE_KEYS } from 'src/app/app.config';
 import { AuthUserController } from '../../controllers';
+import { STORAGE_KEYS } from 'src/app.config';
 import { LoginForm } from './login.form';
 
 @Component({

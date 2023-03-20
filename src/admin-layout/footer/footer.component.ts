@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { APP_INFO } from 'src/app/app.config';
+import { APP_INFO } from 'src/app.config';
 
 @Component({
   selector: 'app-footer',
