@@ -1,4 +1,4 @@
-import { AppState } from '@app/app.state';
+import { AppState } from '../../app.state';
 import { createSelector } from '@ngrx/store';
 
 export const selectUserAuthenticated = (state: AppState) => state.userAuthenticated;

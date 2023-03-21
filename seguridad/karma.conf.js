@@ -24,7 +24,7 @@ module.exports = function (config) {
       suppressAll: true,
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/seguridad'),
+      dir: require('path').join(__dirname, './coverage/app'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'lcov' }, { type: 'text-summary' }],
       check: {
