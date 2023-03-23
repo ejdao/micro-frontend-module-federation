@@ -32,12 +32,6 @@ module.exports = {
         seguridad: 'http://localhost:4001/seguridad.js',
       },
 
-      name: 'app',
-      filename: 'app.js',
-      exposes: {
-        './stores': 'src/stores',
-      },
-
       shared: share({
         '@angular/core': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         '@angular/common': { singleton: true, strictVersion: true, requiredVersion: 'auto' },

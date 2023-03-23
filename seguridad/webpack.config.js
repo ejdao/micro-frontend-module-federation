@@ -32,10 +32,7 @@ module.exports = {
       filename: 'seguridad.js',
       exposes: {
         './SeguridadModule': 'src/seguridad.module.ts',
-      },
-
-      remotes: {
-        app: 'http://localhost:4000/app.js',
+        './TestsModule': 'src/components/tests/tests.component.module.ts',
       },
 
       shared: share({

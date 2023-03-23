@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { UserAuthenticatedImpl } from 'app/stores';
 import { SeguridadRouting } from './seguridad.routing';
-import { UserAuthenticatedStore } from './stores';
+import { UserAuthenticatedImpl, UserAuthenticatedStore } from './stores';
 
 @NgModule({
   imports: [SeguridadRouting],

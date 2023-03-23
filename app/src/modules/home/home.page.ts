@@ -23,13 +23,9 @@ export class HomePage implements OnInit, OnDestroy {
     this._obs = this.userAuthenticated.observable().subscribe(_ => {
       console.log(_);
     });
-
+    /*
     setTimeout(() => {
-      this.userAuthenticated.dispatch({
-        token: 'aaaaa',
-        name: 'aaaaa',
-        authorities: [],
-      });
+
     }, 2000);
 
     setTimeout(() => {
@@ -38,9 +34,17 @@ export class HomePage implements OnInit, OnDestroy {
         name: 'bbbbb',
         authorities: ['4001'],
       });
-    }, 4000);
+    }, 4000);*/
 
     document.title = 'Module Federation | Home';
+  }
+
+  cambiarEstado() {
+    this.userAuthenticated.dispatch({
+      token: 'aaaaa',
+      name: 'aaaaa',
+      authorities: [],
+    });
   }
 
   public ngOnDestroy(): void {

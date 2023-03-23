@@ -1,8 +1,5 @@
 //import { UserAuthenticatedModel } from './stores';
 declare module 'app/stores';
+declare module 'app/components';
 
-/*
-declare class UserAuthenticatedImpl {
-  dispatch(payload: UserAuthenticatedModel): void;
-}
-*/
+//type TestComponent = typeof import("app/components");

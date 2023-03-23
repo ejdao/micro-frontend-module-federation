@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import * as UserAuthenticatedActions from './user-authenticated.actions';
 import { UserAuthenticatedModel } from './user-authenticated.model';
 

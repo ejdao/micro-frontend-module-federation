@@ -23,4 +23,12 @@ export class RegistrarUsuariosPage implements OnInit {
   public ngOnDestroy(): void {
     this._obs.unsubscribe();
   }
+
+  public onChangeState() {
+    this.userAuthenticated.dispatch({
+      token: 'ddddd',
+      name: 'ddddd',
+      authorities: [],
+    });
+  }
 }
