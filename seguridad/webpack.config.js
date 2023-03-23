@@ -34,6 +34,10 @@ module.exports = {
         './SeguridadModule': 'src/seguridad.module.ts',
       },
 
+      remotes: {
+        app: 'http://localhost:4000/app.js',
+      },
+
       shared: share({
         '@angular/core': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         '@angular/common': { singleton: true, strictVersion: true, requiredVersion: 'auto' },

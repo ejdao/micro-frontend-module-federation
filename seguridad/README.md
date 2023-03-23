@@ -14,4 +14,6 @@ Sigue este [link](https://academia-binaria.com/el-patron-redux-con-ngrx-en-angul
 
 Sigue este otro [link](https://www.youtube.com/watch?v=6X3nWNXzDc0&list=PL_WGMLcL4jzVkzMox4UxGcsBLvFurCDax&index=1&ab_channel=LeiferMendez) para ver una lista de videos complementarios acerca de NgRx.
 
-`ng g @ngrx/schematics:feature stores/user-authenticated --project=app --module=app.module.ts --no-flat --skip-tests=true` Ejemplo de como generar stores mediante @ngrx/schematics
+`ng g @ngrx/schematics:feature stores/user-authenticated --project=app --module=app.module.ts --no-flat --skip-tests=true` Ejemplo de como generar stores mediante @ngrx/schematics.
+
+Mas información acerca de componentes compartidos y production mode [aquí](https://www.bitovi.com/blog/how-to-build-a-micro-frontend-architecture-with-angular).
