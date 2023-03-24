@@ -17,3 +17,9 @@ Sigue este otro [link](https://www.youtube.com/watch?v=6X3nWNXzDc0&list=PL_WGMLc
 `ng g @ngrx/schematics:feature stores/user-authenticated --project=app --module=app.module.ts --no-flat --skip-tests=true` Ejemplo de como generar stores mediante @ngrx/schematics.
 
 Mas información acerca de componentes compartidos y production mode [aquí](https://www.bitovi.com/blog/how-to-build-a-micro-frontend-architecture-with-angular).
+
+## Observaciones
+
+No puedes exportar un modulo si no está siendo usado en el proyecto el cual exporta debido a que si no se usa no se compila.
+
+[Aquí](https://github.com/ydmitry/angular11-webpack-module-federation-custom-webpack-builder/blob/main/src/app/app.component.ts#L21) puede ver una forma de importar componentes en componentes.

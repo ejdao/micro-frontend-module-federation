@@ -1,12 +1,17 @@
+// @ts-nocheck
+
 declare module 'seguridad/SeguridadModule';
 
-declare module 'seguridad/TestsModule' {
-  import { NgModule } from '@angular/core';
+declare class TestsComponentModule {}
 
-  @NgModule()
+declare module 'seguridad/TestsModule' {
   export class TestsComponentModule {}
+  //export type TestsComponentModule = any;
 
   //import * as i0 from '@angular/core';
+
+  // @ts-nocheck
+
   // export class TestsComponentModule {
   //static ɵfac: i0.ɵɵFactoryDeclaration<TestsComponentModule, never>;
   //static ɵmod: i0.ɵɵNgModuleDeclaration<TestsComponentModule, [], [], []>;

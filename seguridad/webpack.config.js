@@ -32,7 +32,7 @@ module.exports = {
       filename: 'seguridad.js',
       exposes: {
         './SeguridadModule': 'src/seguridad.module.ts',
-        './TestsModule': 'src/components/tests/tests.component.module.ts',
+        './TestsComponentModule': 'src/components/tests/tests.component.module.ts',
       },
 
       shared: share({
