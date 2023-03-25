@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HomePageRouting } from './home.routing';
 import { HomePage } from './home.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RemoteTestsComponentService } from '@shared/components';
+import { RemoteTestsComponentService, TestsComponent } from '@shared/components';
 
 @NgModule({
   declarations: [HomePage],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HomePageRouting],
+  imports: [CommonModule, FormsModule, TestsComponent, ReactiveFormsModule, HomePageRouting],
 })
 export class HomePageModule {}

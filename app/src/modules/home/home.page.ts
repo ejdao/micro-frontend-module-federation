@@ -21,46 +21,26 @@ import { Subscription } from 'rxjs';
   //changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePage implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('testComponent', { read: ViewContainerRef }) viewContainer!: ViewContainerRef;
-  private _testsComponent!: ComponentRef<TestsComponentProperties>;
-
   public value = new FormControl('');
-  private _eventSubscription!: Subscription;
-  private _formControlSubscription!: Subscription;
 
-  constructor(
-    private _userAuthenticated: UserAuthenticatedStore,
-    private _testsComponentModule: RemoteTestsComponentService
-  ) {
-    this._formControlSubscription = this.value.valueChanges.subscribe(_ => {
-      this._testsComponent.instance.label = _ || '';
-    });
+  constructor() {}
+  ngOnDestroy(): void {
+    // throw new Error('Method not implemented.');
   }
 
-  public async ngAfterViewInit(): Promise<void> {
-    await this._loadComponent();
+  public async ngAfterViewInit(): Promise<void> {}
 
-    this._testsComponent.instance.emitEvent.subscribe(_ => {
-      this.value.setValue(_);
-    });
+  public resetInput(_ = '') {
+    this.value.setValue(_);
   }
 
-  private async _loadComponent(): Promise<void> {
-    this._testsComponent = await this._testsComponentModule.getTests1Component(this.viewContainer);
-  }
-
-  public cambiarEstado(): void {
+  /*public cambiarEstado(): void {
     this._userAuthenticated.dispatch({
       token: 'aaaaa',
       name: 'aaaaa',
       authorities: [],
     });
-  }
-
-  public ngOnDestroy(): void {
-    this._eventSubscription.unsubscribe();
-    this._formControlSubscription.unsubscribe();
-  }
+  }*/
 
   public ngOnInit(): void {
     /*const obs = this._userAuthenticated.observable().subscribe(_ => {
