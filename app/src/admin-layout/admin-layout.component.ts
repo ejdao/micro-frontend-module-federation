@@ -7,7 +7,7 @@ import { SIDE_NAV } from './admin-layout.navigation';
   templateUrl: './admin-layout.component.html',
   styleUrls: ['./admin-layout.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  //changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminLayoutComponent implements OnInit {
   private _includeBreadcrumbs = false;

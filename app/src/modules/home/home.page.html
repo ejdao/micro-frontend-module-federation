@@ -1,7 +1,9 @@
 <p>home works!</p>
-<button (click)="cambiarEstado()">cambiar estado</button>
+<!-- <button (click)="cambiarEstado()">cambiar estado</button> -->
+
+<input [formControl]="value" />
 <br />
-<button (click)="cargarTestComponent()">cargar TestComponent</button>
+{{value.value}}
 <br />
 
 <div #testComponent></div>

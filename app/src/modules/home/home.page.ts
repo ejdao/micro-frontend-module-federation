@@ -1,6 +1,5 @@
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
+  AfterViewInit,
   Component,
   ComponentRef,
   OnDestroy,
@@ -9,12 +8,9 @@ import {
   ViewContainerRef,
   ViewEncapsulation,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { UserAuthenticatedStore } from '@app/stores';
-import {
-  getTestsComponent,
-  TestsComponentProperties,
-} from '@shared/components/tests-component.functions';
-//import { RemoteTestsComponent } from '@shared/components/TestsComponent';
+import { RemoteTestsComponentService, TestsComponentProperties } from '@shared/components';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -24,36 +20,33 @@ import { Subscription } from 'rxjs';
   encapsulation: ViewEncapsulation.None,
   //changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomePage implements OnInit, OnDestroy {
+export class HomePage implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('testComponent', { read: ViewContainerRef }) viewContainer!: ViewContainerRef;
+  private _testsComponent!: ComponentRef<TestsComponentProperties>;
 
-  private _obs!: Subscription;
+  public value = new FormControl('');
+  private _eventSubscription!: Subscription;
+  private _formControlSubscription!: Subscription;
 
   constructor(
     private _userAuthenticated: UserAuthenticatedStore,
-    //private _testsComponentModule: RemoteTestsComponent,
-    private _cd: ChangeDetectorRef
-  ) {}
-
-  public ngOnInit(): void {
-    this._obs = this._userAuthenticated.observable().subscribe(_ => {
-      console.log(_);
+    private _testsComponentModule: RemoteTestsComponentService
+  ) {
+    this._formControlSubscription = this.value.valueChanges.subscribe(_ => {
+      this._testsComponent.instance.label = _ || '';
     });
-
-    document.title = 'Module Federation | Home';
-
-    this.cargarTestComponent();
   }
 
-  public async cargarTestComponent(): Promise<void> {
-    const Tests1Component = await getTestsComponent();
+  public async ngAfterViewInit(): Promise<void> {
+    await this._loadComponent();
 
-    const ref: ComponentRef<TestsComponentProperties> =
-      this.viewContainer.createComponent(Tests1Component);
+    this._testsComponent.instance.emitEvent.subscribe(_ => {
+      this.value.setValue(_);
+    });
+  }
 
-    ref.instance.label = 'label cambiado desde el host';
-
-    this._cd.markForCheck();
+  private async _loadComponent(): Promise<void> {
+    this._testsComponent = await this._testsComponentModule.getTests1Component(this.viewContainer);
   }
 
   public cambiarEstado(): void {
@@ -65,6 +58,16 @@ export class HomePage implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy(): void {
-    this._obs.unsubscribe();
+    this._eventSubscription.unsubscribe();
+    this._formControlSubscription.unsubscribe();
+  }
+
+  public ngOnInit(): void {
+    /*const obs = this._userAuthenticated.observable().subscribe(_ => {
+      console.log(_);
+    });
+    obs.unsubscribe();
+
+    document.title = 'Module Federation | Home';*/
   }
 }
