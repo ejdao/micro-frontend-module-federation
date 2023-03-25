@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ROOT_REDUCERS } from './app.state';
 import { AppRouting } from './app.routing';
 import { TestsComponentModule } from './components/tests/tests.component.module';
+import { TestsStandAloneComponent } from './components/tests-stand-alone/tests-stand-alone.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserAnimationsModule,
     StoreModule.forRoot(ROOT_REDUCERS),
+    TestsStandAloneComponent,
     TestsComponentModule,
     AppRouting,
   ],

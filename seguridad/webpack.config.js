@@ -33,6 +33,8 @@ module.exports = {
       exposes: {
         './SeguridadModule': 'src/seguridad.module.ts',
         './TestsComponentModule': 'src/components/tests/tests.component.module.ts',
+        './TestsStandAloneComponent':
+          'src/components/tests-stand-alone/tests-stand-alone.component.ts',
       },
 
       shared: share({

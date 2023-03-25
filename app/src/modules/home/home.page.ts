@@ -1,11 +1,20 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
+  ComponentRef,
   OnDestroy,
   OnInit,
+  ViewChild,
+  ViewContainerRef,
   ViewEncapsulation,
 } from '@angular/core';
 import { UserAuthenticatedStore } from '@app/stores';
+import {
+  getTestsComponent,
+  TestsComponentProperties,
+} from '@shared/components/tests-component.functions';
+//import { RemoteTestsComponent } from '@shared/components/TestsComponent';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -13,34 +22,42 @@ import { Subscription } from 'rxjs';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  //changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePage implements OnInit, OnDestroy {
+  @ViewChild('testComponent', { read: ViewContainerRef }) viewContainer!: ViewContainerRef;
+
   private _obs!: Subscription;
-  constructor(private userAuthenticated: UserAuthenticatedStore) {}
+
+  constructor(
+    private _userAuthenticated: UserAuthenticatedStore,
+    //private _testsComponentModule: RemoteTestsComponent,
+    private _cd: ChangeDetectorRef
+  ) {}
 
   public ngOnInit(): void {
-    this._obs = this.userAuthenticated.observable().subscribe(_ => {
+    this._obs = this._userAuthenticated.observable().subscribe(_ => {
       console.log(_);
     });
-    /*
-    setTimeout(() => {
-
-    }, 2000);
-
-    setTimeout(() => {
-      this.userAuthenticated.dispatch({
-        token: 'bbbbb',
-        name: 'bbbbb',
-        authorities: ['4001'],
-      });
-    }, 4000);*/
 
     document.title = 'Module Federation | Home';
+
+    this.cargarTestComponent();
   }
 
-  cambiarEstado() {
-    this.userAuthenticated.dispatch({
+  public async cargarTestComponent(): Promise<void> {
+    const Tests1Component = await getTestsComponent();
+
+    const ref: ComponentRef<TestsComponentProperties> =
+      this.viewContainer.createComponent(Tests1Component);
+
+    ref.instance.label = 'label cambiado desde el host';
+
+    this._cd.markForCheck();
+  }
+
+  public cambiarEstado(): void {
+    this._userAuthenticated.dispatch({
       token: 'aaaaa',
       name: 'aaaaa',
       authorities: [],
